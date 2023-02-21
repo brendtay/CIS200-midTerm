@@ -6,24 +6,20 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors())
 
-tierSelected = 0; 
-
 app.listen(PORT, () =>{
     console.log("Listening on port " + PORT)
 })
 
+let products = [];
 
-app.get("/drone/:tier", (req, res) => {
+app.get("/api/products/create/:name", (req, res) => {
    
-    //products.push(req.params.name);
-    //res.send(products);
-    tierSelected = req.params.tier;
-    res.send(tierSelected);
-    console.log("Server is storing button: " + tierSelected);
+    products.push(req.params.name);
+    res.send(products);
     
 })
 
-// app.get("/api/products/create/", (req, res) => {
-//     res.send(products);
-// })
+app.get("/api/products/create/", (req, res) => {
+    res.send(products);
+})
 
