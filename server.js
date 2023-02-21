@@ -15,8 +15,6 @@ app.listen(PORT, () =>{
 
 app.get("/drone/:tier", (req, res) => {
    
-    //products.push(req.params.name);
-    //res.send(products);
     tierSelected = req.params.tier;
     res.send(tierSelected);
     console.log("Server is storing button: " + tierSelected);
