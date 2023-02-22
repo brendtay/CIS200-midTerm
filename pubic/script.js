@@ -23,6 +23,9 @@ $(document).ready(function () {
         checkButton();
     })
 
+    $("#orderHere").click(function () {  
+        window.location.href='order.html';
+    })
 function checkButton(){
     $.get("http://localhost:3000/drone/" + userChoice, function () {
             console.log("Website is reporting button: " + userChoice);
