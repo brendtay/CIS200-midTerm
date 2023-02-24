@@ -1,11 +1,14 @@
-$(document).ready(function () {
-    $("#homePage").click(function () {  
-        window.location.href='index.html';
-    })
+$("#homePage").click(function () {  //This button call takes the user to the homepage
+    window.location.href='index.html';
+})
+$("#order1").click(function () {  //This button call takes the user to the order page
+    window.location.href='order.html';
+})
 
-    
-});
+$("#order2").click(function () {  //This button call takes the user to the order page
+    window.location.href='order.html';
+})
 
-$("#order1").click(function () {  
+$("#order3").click(function () {  //This button call takes the user to the order page
     window.location.href='order.html';
 })
