@@ -38,5 +38,3 @@ app.get("/user/usertotal/:total", (req, res) => {
 app.get("/user/usertotal/", (req, res) => { //Returns the value stores at /usertotal/ when requested by server
     res.send(orderStorage);
 })
-
-
