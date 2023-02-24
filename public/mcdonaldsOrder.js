@@ -114,7 +114,7 @@ function refreshWebPage(){
     //Pulls the orders total amount that is stored on the server and changes it to a float for caculation.
     $.get("http://localhost:3000/user/usertotal", function(orderTotal){
         userTotal = parseFloat(orderTotal); 
-        $("#story").text("$" + userTotal);
+        $("#price").text("$" + orderTotal);
     })
     
 }

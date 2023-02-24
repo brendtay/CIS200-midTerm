@@ -6,14 +6,13 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors())
 
-var tierSelected = 0; //Stores the tier that the user selected
-var userOrderTotal = 0; //Stores the total value of the order in a float
-var orderStorage = 0; //Stores the total value of the order in a string to return to the website
-
 app.listen(PORT, () =>{
     console.log("Listening on port " + PORT)
 })
 
+var tierSelected = 0; //Stores the tier that the user selected
+var userOrderTotal = 0; //Stores the total value of the order in a float
+var orderStorage = 0; //Stores the total value of the order in a string to return to the website
 
 app.get("/drone/:tier", (req, res) => { //pulls the tier selected fromm the website
     tierSelected =  req.params.tier; //looking back this might be pointless but it sends it back to the website
