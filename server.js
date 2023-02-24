@@ -6,9 +6,9 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors())
 
-let tierSelected = 0; 
-let userOrderTotal = 0;
-let orderStorage;
+var tierSelected = 0; 
+var userOrderTotal = 0;
+var orderStorage = 0;
 
 app.listen(PORT, () =>{
     console.log("Listening on port " + PORT)
@@ -26,23 +26,19 @@ app.get("/drone/:tier", (req, res) => {
 app.get("/drone/", (req, res) => {
    
     res.send(tierSelected);
-    
-    
 })
 
 
 app.get("/user/usertotal/:total", (req, res) => {
-    if(req.params.total != "NaN"){
         userOrderTotal = parseFloat(req.params.total);
         orderStorage = req.params.total;
-        res.send(req.params.total);
-    }
+        res.send(JSON.stringify(userOrderTotal)); //I dont know why this works but it just does string --> float --> string
     
     console.log("Server is users order total of: " + userOrderTotal);
     
 })
 
-app.get("/user/usertotal", (req, res) => {
+app.get("/user/usertotal/", (req, res) => {
     res.send(orderStorage);
 })
 

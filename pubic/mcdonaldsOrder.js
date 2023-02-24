@@ -41,6 +41,24 @@ $("#BM-meal").click(function () {
         mealButton();
 })
 
+$("#QP-sandwich").click(function () {  
+    userTotal += 4.50;
+    mealButton();
+})
+$("#QP-meal").click(function () {  
+    userTotal += 7;
+    console.log(userTotal);
+    mealButton();
+})
+
+$("#Checkout").click(function () {  
+    window.location.href='404notFound.html';
+})
+
+$("#homePage").click(function () {  
+    window.location.href='index.html';
+})
+
 function mealButton(){
     $.get("http://localhost:3000/user/usertotal/" + userTotal, function () {
             console.log("Website is reporting the users total is: " + userTotal);
